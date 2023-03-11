@@ -19,7 +19,7 @@ public class FormController : ControllerBase
         _logger = logger;
     }
 
-    [HttpPost]
+    [HttpGet]
     [Route("test")]
     public ActionResult TestEndpoint()
     {

@@ -22,8 +22,8 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.AddBlobService(
-    builder.Configuration["AzureStorageConnectionString"],
-    builder.Configuration["AzureStorageContainerName"]
+    builder.Configuration["StorageConnectionString"],
+    builder.Configuration["StorageContainerName"]
 );
 builder.Services.AddScoped<FormMapper>();
 
