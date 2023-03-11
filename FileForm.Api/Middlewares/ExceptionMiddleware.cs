@@ -24,6 +24,7 @@ public class ExceptionMiddleware
         {
             _logger.LogError(e, e.Message, e.StackTrace);
             context.Response.ContentType = "application/json";
+            context.Response.StatusCode = 500;
 
             var response = new ApiException();
 
