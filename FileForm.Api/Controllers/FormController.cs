@@ -20,6 +20,13 @@ public class FormController : ControllerBase
     }
 
     [HttpPost]
+    [Route("test")]
+    public ActionResult TestEndpoint()
+    {
+        return Ok("Hello from Azure!");
+    }
+
+    [HttpPost]
     [Route("docx")]
     public async Task<IActionResult> UploadFileRecord([FromForm]DocxFileFormDto form)
     {
