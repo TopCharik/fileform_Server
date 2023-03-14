@@ -1,0 +1,19 @@
+{
+  "bindings": [
+    {
+      "name": "myBlob",
+      "type": "blobTrigger",
+      "direction": "in",
+      "path": "docx/{name}",
+      "connection": "AzureWebJobsStorage"
+    },
+    {
+      "name": "message",
+      "apiKey": "SENDGRID_API_KEY",
+      "from": "no-reply@em6295.andriicharkivskyi.online",
+      "subject": "Message from azure function!",
+      "direction": "out",
+      "type": "sendGrid"
+    }
+  ]
+}
