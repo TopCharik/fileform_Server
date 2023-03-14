@@ -1,3 +1,4 @@
+using System.Globalization;
 using FileForm.Api.Dto;
 using FileForm.Core;
 
@@ -11,9 +12,13 @@ public class FormMapper
         var fileName = Guid.NewGuid() + fileType;
         var contentType = form.File.Headers.ContentType;
 
+        var indMapper = new IdnMapping();
+        var asciiFileName = indMapper.GetAscii(form.File.FileName);
+        var asciiEmail = indMapper.GetAscii(form.Email);
+
         var matadata = new Dictionary<string, string>();
-        matadata.Add("originalFileName", form.File.FileName);
-        matadata.Add("email", form.Email);
+        matadata.Add("originalFileName", asciiFileName);
+        matadata.Add("email", asciiEmail);
 
 
         return new FileRecord
