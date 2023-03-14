@@ -17,7 +17,7 @@ message)
         var originalFileName = indMapper.GetUnicode(asciiFileName);
         var originalEmail = indMapper.GetUnicode(asciiEmail);
 
-        messageText = "File has been added to the blob: " + originalFileName;
+        messageText = "File has been added to the blob storage: " + originalFileName;
         emailTo = originalEmail;
     }
     else
