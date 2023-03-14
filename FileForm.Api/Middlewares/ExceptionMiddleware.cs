@@ -6,10 +6,9 @@ public class ExceptionMiddleware
 {
     private readonly RequestDelegate _next;
     private readonly ILogger<ExceptionMiddleware> _logger;
-    private readonly IHostEnvironment _env;
-    public ExceptionMiddleware(RequestDelegate next, ILogger<ExceptionMiddleware> logger, IHostEnvironment env)
+    
+    public ExceptionMiddleware(RequestDelegate next, ILogger<ExceptionMiddleware> logger)
     {
-        _env = env;
         _logger = logger;
         _next = next;
     }
@@ -22,7 +21,7 @@ public class ExceptionMiddleware
         }
         catch (Exception e)
         {
-            _logger.LogError(e, e.Message, e.StackTrace);
+            _logger.LogError($"saagsfg{"sdfas"}");
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = 500;
 
